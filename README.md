@@ -1,11 +1,12 @@
 # front_base_2018
 ## 環境
-Percel + PostCSS + Pug + ES6 + 
+Percel + PostCSS + Pug + ES6
 ## 事前に用意するもの
 - yarnかnpmが使える
 - parcelのインストール
-yarn global add parcel-bundler
+`yarn global add parcel-bundler`
 ## ファイル構成
+`
 .
 ├── .babelrc
 ├── package.json
@@ -20,9 +21,10 @@ yarn global add parcel-bundler
         ├── app.js
         └── modules
             └── add.js
+`
 ## 開発手順
-> yarn start
-> parcel watch src/index.html -d public
+`yarn start`
+`parcel watch src/index.html -d public`
 ## 概要 / 意図
 自分で案件をやるためにサクサク設定ファイルいらずのpercelを使ってフロントの環境構築をしてみました。
 最小の案件では使えそうですがまだ実戦では使用していません。ドキドキ。
