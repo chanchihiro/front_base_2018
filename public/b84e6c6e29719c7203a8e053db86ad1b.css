@@ -1,0 +1,12 @@
+body {
+  background: #000; }
+  body h1 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    text-align: center; }
+  body .parcel {
+    width: 400px;
+    height: 374px;
+    margin: 0 auto;
+    background: url("00bb21348de5be215450300e87df8ac4.png"); }
