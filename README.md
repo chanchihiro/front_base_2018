@@ -10,20 +10,20 @@ Percel + PostCSS + Pug + ES6
 `yarn global add parcel-bundler`
 ## ファイル構成
 ```
-.<br>
-├── .babelrc<br>
-├── package.json<br>
-├── public<br>
-└── src<br>
-    ├── scss<br>
-    │   └── style.scss<br>
-    ├── images<br>
-    │   └── parcel.png<br>
-    ├── index.html<br>
-    └── js<br>
-        ├── app.js<br>
-        └── modules<br>
-            └── add.js<br>
+.
+├── .babelrc
+├── package.json
+├── public
+└── src
+    ├── scss
+    │   └── style.scss
+    ├── images
+    │   └── parcel.png
+    ├── index.html
+    └── js
+        ├── app.js
+        └── modules
+            └── add.js
 ```
 ## 開発手順
 `yarn start` <br>
