@@ -1,0 +1,7 @@
+$bg: #222222;
+$grey: #333;
+
+:root{
+  --background-color: $bg;
+  --font-color: $grey;
+}

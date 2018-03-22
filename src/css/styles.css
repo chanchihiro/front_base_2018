@@ -1,18 +1,16 @@
-$baseColor: #000;
-
+@import "./variables.css";
 body {
-  background: $baseColor;
-
+  background: var(--background-color);
   h1 {
     margin: 0;
     padding: 0;
     color: #fff;
     text-align: center;
   }
-
   .parcel {
     width: 400px;
     height: 374px;
+    color: #fff;
     margin: 0 auto;
     background: url('../images/parcel.png');
   }

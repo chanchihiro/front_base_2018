@@ -1,12 +1,19 @@
-body {
-  background: #000; }
+:root{
+  --background-color: #222222;
+  --font-color: #333;
+}body {
+  background: var(--background-color);
+}
   body h1 {
     margin: 0;
     padding: 0;
     color: #fff;
-    text-align: center; }
-  body .parcel {
+    text-align: center;
+  }
+  body ._parcel_x77n3_10 {
     width: 400px;
     height: 374px;
+    color: #fff;
     margin: 0 auto;
-    background: url("00bb21348de5be215450300e87df8ac4.png"); }
+    background: url('00bb21348de5be215450300e87df8ac4.png');
+  }

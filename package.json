@@ -8,5 +8,13 @@
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
     "node-sass": "^4.7.2"
+  },
+  "dependencies": {
+    "autoprefixer": "^8.1.0",
+    "postcss-import": "^11.1.0",
+    "postcss-modules": "^1.1.0",
+    "postcss-nested": "^3.0.0",
+    "postcss-scss": "^1.0.4",
+    "postcss-simple-vars": "^4.1.0"
   }
 }

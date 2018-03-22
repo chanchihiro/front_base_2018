@@ -71,7 +71,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({7:[function(require,module,exports) {
+})({8:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -132,13 +132,21 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":7}],3:[function(require,module,exports) {
+},{"./bundle-url":8}],6:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
-      
-},{"./../images/parcel.png":[["00bb21348de5be215450300e87df8ac4.png",6],6],"_css_loader":5}],4:[function(require,module,exports) {
+      module.exports = {};
+},{"_css_loader":5}],3:[function(require,module,exports) {
+
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      module.exports = {
+  "parcel": "_parcel_x77n3_10"
+};
+},{"./variables.css":6,"./../images/parcel.png":[["00bb21348de5be215450300e87df8ac4.png",7],7],"_css_loader":5}],4:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -151,7 +159,7 @@ function add(number1, number2) {
 },{}],2:[function(require,module,exports) {
 'use strict';
 
-require('../scss/styles.scss');
+require('../css/styles.css');
 
 var _add = require('./modules/add');
 
@@ -160,11 +168,11 @@ var _add2 = _interopRequireDefault(_add);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var number1 = 100;
-var number2 = 600;
+var number2 = 200;
 var total = (0, _add2.default)(number1, number2);
 
 console.log(total);
-},{"../scss/styles.scss":3,"./modules/add":4}],12:[function(require,module,exports) {
+},{"../css/styles.css":3,"./modules/add":4}],19:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -186,7 +194,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50888' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52486' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -287,5 +295,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[12,2])
+},{}]},{},[19,2])
 //# sourceMappingURL=/public/b84e6c6e29719c7203a8e053db86ad1b.map
