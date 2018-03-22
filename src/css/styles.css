@@ -1,4 +1,5 @@
 @import "./variables.css";
+
 body {
   background: var(--background-color);
   h1 {
@@ -8,8 +9,8 @@ body {
     text-align: center;
   }
   .parcel {
-    width: 400px;
-    height: 374px;
+    width: 1000px;
+    height: 1000px;
     color: #fff;
     margin: 0 auto;
     background: url('../images/parcel.png');

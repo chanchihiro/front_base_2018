@@ -1,5 +1,6 @@
 {
   "modules": true,
+  "input": "./src/css/styles.css",
   "plugins": {
     "autoprefixer": {
       "grid": true,
