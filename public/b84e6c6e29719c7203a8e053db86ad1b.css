@@ -1,16 +1,31 @@
+/* color */
+/* root */
 :root{
   --background-color: #222222;
   --font-color: #333;
-}body {
+}/* import file */
+
+
+/* main */
+
+
+body {
   background: var(--background-color);
 }
-  body h1 {
+
+
+body h1 {
     margin: 0;
     padding: 0;
     color: #fff;
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
-  body ._parcel_1b54c_11 {
+
+
+body #pa {
     width: 1000px;
     height: 1000px;
     color: #fff;

@@ -6,8 +6,10 @@
 Parcel + PostCSS + Pug + ES6
 ## 事前に用意するもの
 - yarnかnpmが使える
-- parcelのインストール<br>
-`yarn global add parcel-bundler`
+```
+- parcelのインストール
+yarn global add parcel-bundler
+```
 ## ファイル構成
 ```
 .
@@ -26,5 +28,7 @@ Parcel + PostCSS + Pug + ES6
             └── add.js
 ```
 ## 開発手順
-`yarn start` <br>
-`parcel watch src/index.html -d public`
+```
+ビルドしてwatchしてくれる
+yarn run start
+```

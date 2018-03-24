@@ -9,6 +9,9 @@
     "babel-preset-env": "^1.6.1",
     "node-sass": "^4.7.2"
   },
+  "scripts": {
+    "start": "parcel src/index.html -d public"
+  },
   "dependencies": {
     "autoprefixer": "^8.1.0",
     "postcss-import": "^11.1.0",

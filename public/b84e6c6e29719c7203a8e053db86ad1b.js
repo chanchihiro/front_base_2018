@@ -144,7 +144,7 @@ module.exports = reloadCSS;
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       module.exports = {
-  "parcel": "_parcel_1b54c_11"
+  "pa": "_pa_yk939_1"
 };
 },{"./variables.css":6,"./../images/parcel.png":[["00bb21348de5be215450300e87df8ac4.png",7],7],"_css_loader":5}],4:[function(require,module,exports) {
 "use strict";
@@ -167,12 +167,14 @@ var _add2 = _interopRequireDefault(_add);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/* main */
+/* import file */
 var number1 = 100;
 var number2 = 200;
 var total = (0, _add2.default)(number1, number2);
 
 console.log(total);
-},{"../css/styles.css":3,"./modules/add":4}],26:[function(require,module,exports) {
+},{"../css/styles.css":3,"./modules/add":4}],19:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -194,7 +196,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52486' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '60473' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -295,5 +297,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[26,2])
+},{}]},{},[19,2])
 //# sourceMappingURL=/public/b84e6c6e29719c7203a8e053db86ad1b.map
