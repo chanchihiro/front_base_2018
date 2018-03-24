@@ -4,10 +4,12 @@
 最小の案件では使えそうですがまだ実戦では使用していません。ドキドキ。
 ## 環境
 Parcel + PostCSS + Pug + ES6
+## 環境構築
+`yarn install`
 ## 事前に用意するもの
-- yarnかnpmが使える
+yarnが使える状態
 ```
-- parcelのインストール
+parcelのインストール
 yarn global add parcel-bundler
 ```
 ## ファイル構成

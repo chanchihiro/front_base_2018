@@ -71,7 +71,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({18:[function(require,module,exports) {
+})({7:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -101,7 +101,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],11:[function(require,module,exports) {
+},{}],3:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -132,13 +132,13 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":18}],14:[function(require,module,exports) {
+},{"./bundle-url":7}],4:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       module.exports = {};
-},{"_css_loader":11}],7:[function(require,module,exports) {
+},{"_css_loader":3}],1:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
@@ -146,7 +146,7 @@ module.exports = reloadCSS;
       module.exports = {
   "pa": "_pa_yk939_1"
 };
-},{"./variables.css":14,"./../images/parcel.png":[["00bb21348de5be215450300e87df8ac4.png",13],13],"_css_loader":11}],16:[function(require,module,exports) {
+},{"./variables.css":4,"./../images/parcel.png":[["00bb21348de5be215450300e87df8ac4.png",5],5],"_css_loader":3}],6:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -156,7 +156,7 @@ exports.default = add;
 function add(number1, number2) {
   return number1 + number2;
 }
-},{}],6:[function(require,module,exports) {
+},{}],2:[function(require,module,exports) {
 'use strict';
 
 require('../css/styles.css');
@@ -174,7 +174,7 @@ var number2 = 200;
 var total = (0, _add2.default)(number1, number2);
 
 console.log(total);
-},{"../css/styles.css":7,"./modules/add":16}],20:[function(require,module,exports) {
+},{"../css/styles.css":1,"./modules/add":6}],8:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -196,7 +196,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '56086' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '55085' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -297,5 +297,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[20,6])
-//# sourceMappingURL=/public/b84e6c6e29719c7203a8e053db86ad1b.map
+},{}]},{},[8,2])
+//# sourceMappingURL=/dist/b84e6c6e29719c7203a8e053db86ad1b.map

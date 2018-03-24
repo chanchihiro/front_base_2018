@@ -146,35 +146,7 @@ module.exports = reloadCSS;
       module.exports = {
   "pa": "_pa_yk939_1"
 };
-},{"./variables.css":14,"./../images/parcel.png":[["00bb21348de5be215450300e87df8ac4.png",13],13],"_css_loader":11}],16:[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = add;
-function add(number1, number2) {
-  return number1 + number2;
-}
-},{}],6:[function(require,module,exports) {
-'use strict';
-
-require('../css/styles.css');
-
-var _add = require('./modules/add');
-
-var _add2 = _interopRequireDefault(_add);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/* main */
-/* import file */
-var number1 = 100;
-var number2 = 200;
-var total = (0, _add2.default)(number1, number2);
-
-console.log(total);
-},{"../css/styles.css":7,"./modules/add":16}],20:[function(require,module,exports) {
+},{"./variables.css":14,"./../images/parcel.png":13,"_css_loader":11}],20:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -297,5 +269,86 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[20,6])
-//# sourceMappingURL=/public/b84e6c6e29719c7203a8e053db86ad1b.map
+},{}],22:[function(require,module,exports) {
+var getBundleURL = require('./bundle-url').getBundleURL;
+
+function loadBundlesLazy(bundles) {
+  if (!Array.isArray(bundles)) {
+    bundles = [bundles];
+  }
+
+  var id = bundles[bundles.length - 1];
+
+  try {
+    return Promise.resolve(require(id));
+  } catch (err) {
+    if (err.code === 'MODULE_NOT_FOUND') {
+      return new LazyPromise(function (resolve, reject) {
+        loadBundles(bundles).then(resolve, reject);
+      });
+    }
+
+    throw err;
+  }
+}
+
+function loadBundles(bundles) {
+  var id = bundles[bundles.length - 1];
+
+  return Promise.all(bundles.slice(0, -1).map(loadBundle)).then(function () {
+    return require(id);
+  });
+}
+
+var bundleLoaders = {};
+function registerBundleLoader(type, loader) {
+  bundleLoaders[type] = loader;
+}
+
+module.exports = exports = loadBundlesLazy;
+exports.load = loadBundles;
+exports.register = registerBundleLoader;
+
+var bundles = {};
+function loadBundle(bundle) {
+  var id;
+  if (Array.isArray(bundle)) {
+    id = bundle[1];
+    bundle = bundle[0];
+  }
+
+  if (bundles[bundle]) {
+    return bundles[bundle];
+  }
+
+  var type = (bundle.substring(bundle.lastIndexOf('.') + 1, bundle.length) || bundle).toLowerCase();
+  var bundleLoader = bundleLoaders[type];
+  if (bundleLoader) {
+    return bundles[bundle] = bundleLoader(getBundleURL() + bundle).then(function (resolved) {
+      if (resolved) {
+        module.bundle.modules[id] = [function (require, module) {
+          module.exports = resolved;
+        }, {}];
+      }
+
+      return resolved;
+    });
+  }
+}
+
+function LazyPromise(executor) {
+  this.executor = executor;
+  this.promise = null;
+}
+
+LazyPromise.prototype.then = function (onSuccess, onError) {
+  return this.promise || (this.promise = new Promise(this.executor).then(onSuccess, onError));
+};
+
+LazyPromise.prototype.catch = function (onError) {
+  return this.promise || (this.promise = new Promise(this.executor).catch(onError));
+};
+},{"./bundle-url":18}],0:[function(require,module,exports) {
+var b=require(22);b.load([["00bb21348de5be215450300e87df8ac4.png",13]]);
+},{}]},{},[20,0])
+//# sourceMappingURL=/public/6d57f596090dd1ba45a1bad3f30b3823.map
