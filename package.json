@@ -14,7 +14,8 @@
     "tslib": "^1.9.0"
   },
   "scripts": {
-    "start": "parcel src/index.pug -d public"
+    "start": "parcel src/pug/index.pug -d public",
+    "build": "parcel build src/pug/index.pug -d build"
   },
   "dependencies": {
     "autoprefixer": "^8.1.0",
