@@ -71,7 +71,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({7:[function(require,module,exports) {
+})({9:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -101,7 +101,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],3:[function(require,module,exports) {
+},{}],5:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -132,49 +132,25 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":7}],4:[function(require,module,exports) {
+},{"./bundle-url":9}],6:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
-      module.exports = {};
-},{"_css_loader":3}],1:[function(require,module,exports) {
+      
+},{"_css_loader":5}],7:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
-      module.exports = {
-  "pa": "_pa_yk939_1"
-};
-},{"./variables.css":4,"./../images/parcel.png":[["00bb21348de5be215450300e87df8ac4.png",5],5],"_css_loader":3}],6:[function(require,module,exports) {
-"use strict";
+      
+},{"_css_loader":5}],4:[function(require,module,exports) {
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = add;
-function add(number1, number2) {
-  return number1 + number2;
-}
-},{}],2:[function(require,module,exports) {
-'use strict';
-
-require('../css/styles.css');
-
-var _add = require('./modules/add');
-
-var _add2 = _interopRequireDefault(_add);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/* main */
-/* import file */
-var number1 = 100;
-var number2 = 200;
-var total = (0, _add2.default)(number1, number2);
-
-console.log(total);
-},{"../css/styles.css":1,"./modules/add":6}],8:[function(require,module,exports) {
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+},{"./reset.css":6,"./variables.css":7,"_css_loader":5}],35:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -196,7 +172,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '55085' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '64674' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -297,5 +273,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[8,2])
-//# sourceMappingURL=/dist/b84e6c6e29719c7203a8e053db86ad1b.map
+},{}]},{},[35])
+//# sourceMappingURL=/develop/6d57f596090dd1ba45a1bad3f30b3823.map

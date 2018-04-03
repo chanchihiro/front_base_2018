@@ -14,7 +14,7 @@
     "tslib": "^1.9.0"
   },
   "scripts": {
-    "start": "parcel src/pug/index.pug -d build",
+    "start": "parcel src/pug/index.pug -d develop",
     "build": "parcel build src/pug/index.pug -d public"
   },
   "dependencies": {

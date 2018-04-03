@@ -71,82 +71,33 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({7:[function(require,module,exports) {
-var bundleURL = null;
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
+})({8:[function(require,module,exports) {
+"use strict";
 
-  return bundleURL;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = add;
+function add(number1, number2) {
+  return number1 + number2;
 }
+},{}],2:[function(require,module,exports) {
+'use strict';
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
+var _add = require('./modules/add');
 
-  return '/';
-}
+var _add2 = _interopRequireDefault(_add);
 
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],3:[function(require,module,exports) {
-var bundle = require('./bundle-url');
+/* main */
+var number1 = 200; /* import file */
 
-function updateLink(link) {
-  var newLink = link.cloneNode();
-  newLink.onload = function () {
-    link.remove();
-  };
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
+var number2 = 200;
+var total = (0, _add2.default)(number1, number2);
 
-var cssTimeout = null;
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":7}],4:[function(require,module,exports) {
-
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      module.exports = {};
-},{"_css_loader":3}],1:[function(require,module,exports) {
-
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      module.exports = {
-  "pa": "_pa_yk939_1"
-};
-},{"./variables.css":4,"./../images/parcel.png":5,"_css_loader":3}],8:[function(require,module,exports) {
+console.log(total);
+},{"./modules/add":8}],10:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -168,7 +119,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '55085' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '64674' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -269,86 +220,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}],10:[function(require,module,exports) {
-var getBundleURL = require('./bundle-url').getBundleURL;
-
-function loadBundlesLazy(bundles) {
-  if (!Array.isArray(bundles)) {
-    bundles = [bundles];
-  }
-
-  var id = bundles[bundles.length - 1];
-
-  try {
-    return Promise.resolve(require(id));
-  } catch (err) {
-    if (err.code === 'MODULE_NOT_FOUND') {
-      return new LazyPromise(function (resolve, reject) {
-        loadBundles(bundles).then(resolve, reject);
-      });
-    }
-
-    throw err;
-  }
-}
-
-function loadBundles(bundles) {
-  var id = bundles[bundles.length - 1];
-
-  return Promise.all(bundles.slice(0, -1).map(loadBundle)).then(function () {
-    return require(id);
-  });
-}
-
-var bundleLoaders = {};
-function registerBundleLoader(type, loader) {
-  bundleLoaders[type] = loader;
-}
-
-module.exports = exports = loadBundlesLazy;
-exports.load = loadBundles;
-exports.register = registerBundleLoader;
-
-var bundles = {};
-function loadBundle(bundle) {
-  var id;
-  if (Array.isArray(bundle)) {
-    id = bundle[1];
-    bundle = bundle[0];
-  }
-
-  if (bundles[bundle]) {
-    return bundles[bundle];
-  }
-
-  var type = (bundle.substring(bundle.lastIndexOf('.') + 1, bundle.length) || bundle).toLowerCase();
-  var bundleLoader = bundleLoaders[type];
-  if (bundleLoader) {
-    return bundles[bundle] = bundleLoader(getBundleURL() + bundle).then(function (resolved) {
-      if (resolved) {
-        module.bundle.modules[id] = [function (require, module) {
-          module.exports = resolved;
-        }, {}];
-      }
-
-      return resolved;
-    });
-  }
-}
-
-function LazyPromise(executor) {
-  this.executor = executor;
-  this.promise = null;
-}
-
-LazyPromise.prototype.then = function (onSuccess, onError) {
-  return this.promise || (this.promise = new Promise(this.executor).then(onSuccess, onError));
-};
-
-LazyPromise.prototype.catch = function (onError) {
-  return this.promise || (this.promise = new Promise(this.executor).catch(onError));
-};
-},{"./bundle-url":7}],0:[function(require,module,exports) {
-var b=require(10);b.load([["00bb21348de5be215450300e87df8ac4.png",5]]);
-},{}]},{},[8,0])
-//# sourceMappingURL=/dist/6d57f596090dd1ba45a1bad3f30b3823.map
+},{}]},{},[10,2])
+//# sourceMappingURL=/develop/b84e6c6e29719c7203a8e053db86ad1b.map

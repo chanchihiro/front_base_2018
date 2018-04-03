@@ -1,22 +1,15 @@
 /* import file */
+@import "./reset.css";
 @import "./variables.css";
 
 
 /* main */
 body {
-  background: var(--background-color);
-  h1 {
-    margin: 0;
+  background-color: var(--background-color);
+  #pyon {
+  	margin: 0;
     padding: 0;
     color: #fff;
     text-align: center;
-    display: flex;
-  }
-  #pa {
-    width: 1000px;
-    height: 1000px;
-    color: #fff;
-    margin: 0 auto;
-    background: url('../images/parcel.png');
   }
 }
