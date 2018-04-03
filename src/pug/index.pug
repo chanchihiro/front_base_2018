@@ -1,44 +1,7 @@
 doctype html
-- title = 'ドンと来い';
-- url = 'blank';
-- ogp_image_url = '../images/parcel.png';
-- site_name = 'blank';
-- description = 'blank';
-- twitter_card_owner = 'blank';
-
+include _config.pug
 html(lang="ja")
   head
-    meta(charset="utf-8")
-    title= title
-
-    //meta
-    meta(name="description", content="あ")
-    meta(name="keywords", content="あ")
-    meta(name="format-detection" content="telephone=no")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no")
-
-    // ogp
-    meta(property="og:url", content=url)
-    meta(property="og:title", content=title)
-    meta(property="og:image", content=ogp_image_url)
-    meta(property="og:site_name", content=site_name)
-    meta(property="og:description", content=description)
-
-    // twitter_card
-    meta(property="twitter:card", content=ogp_image_url)
-    meta(property="twitter:title", content=title)
-    meta(property="twitter:description", content=description)
-    meta(property="twitter:image", content=ogp_image_url)
-    meta(property="twitter:site", content=twitter_card_owner)
-    meta(property="twitter:creator", content=twitter_card_owner)
-
-    // stylesheet
-    link(rel="stylesheet", href="../css/styles.css")
-
-    // javascript
-    script(src="../js/app.js")
-
+    include _head.pug
   body
-   h1 うんこ
-   img(src="../images/parcel.png")
-   a(href="second.pug") 飛びたい
+    h1 始めるぞ
