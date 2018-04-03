@@ -34,24 +34,38 @@ input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;
 legend{color:#000}
 
 #yui3-css-stamp.cssreset{display:none}/* color */
+/* font */
 /* root */
 :root{
   --background-color: #222222;
   --font-color: #333;
+  --font-family-base: Meiryo, Arial, sans-serif;
 }/* import file */
 
+/* responsive  適宜変更 */
 
 /* main */
-
 
 body {
   background-color: var(--background-color);
 }
 
-
 body #pyon {
   	margin: 0;
     padding: 0;
-    color: #fff;
     text-align: center;
   }
+
+@media (min-width: 0) and (max-width: 543px){
+
+body #pyon {
+    	color: #fff;
+  }
+  	}
+
+@media (min-width: 544px){
+
+body #pyon {
+  		color: red;
+  }
+  	}

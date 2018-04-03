@@ -81,7 +81,7 @@ exports.default = add;
 function add(number1, number2) {
   return number1 + number2;
 }
-},{}],2:[function(require,module,exports) {
+},{}],4:[function(require,module,exports) {
 'use strict';
 
 var _add = require('./modules/add');
@@ -119,7 +119,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '64674' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '54608' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -220,5 +220,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[10,2])
+},{}]},{},[10,4])
 //# sourceMappingURL=/develop/b84e6c6e29719c7203a8e053db86ad1b.map

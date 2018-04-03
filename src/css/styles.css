@@ -2,14 +2,24 @@
 @import "./reset.css";
 @import "./variables.css";
 
+/* responsive  適宜変更 */
+$min-width: (min-width: 0) and (max-width: 543px);
+$middle-width: (min-width: 0) and (max-width: 543px);
+$max-width: (min-width: 544px);
+
 
 /* main */
 body {
   background-color: var(--background-color);
   #pyon {
+  	@media $min-width{
+    	color: #fff;
+  	}
+  	@media $max-width{
+  		color: red;
+  	}
   	margin: 0;
     padding: 0;
-    color: #fff;
     text-align: center;
   }
 }

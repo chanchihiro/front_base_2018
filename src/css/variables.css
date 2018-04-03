@@ -3,8 +3,13 @@ $bg: #222222;
 $grey: #333;
 
 
+/* font */
+$font-family-base: Meiryo, Arial, sans-serif;
+
+
 /* root */
 :root{
   --background-color: $bg;
   --font-color: $grey;
+  --font-family-base: $font-family-base;
 }
