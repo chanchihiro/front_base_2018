@@ -33,4 +33,7 @@ yarn global add parcel-bundler
 ```
 ビルドしてwatchしてくれる
 yarn run start
+本番用は
+yarn run build
+上記でpublicが作成される
 ```
