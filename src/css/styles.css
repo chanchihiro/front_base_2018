@@ -1,6 +1,6 @@
 /* import file */
-@import "./reset.css";
-@import "./variables.css";
+@import "reset.css";
+@import "variables.css";
 
 /* responsive  適宜変更 */
 $min-width: (min-width: 0) and (max-width: 543px);
