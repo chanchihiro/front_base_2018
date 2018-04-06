@@ -1,5 +1,5 @@
 /* import file */
-import add from './modules/add';
+import add from 'modules/add';
 
 
 /* main */

@@ -14,12 +14,13 @@
     "tslib": "^1.9.0"
   },
   "scripts": {
-    "start": "parcel src/pug/index.pug -d develop",
+    "start": "parcel src/pug/index.pug develop",
     "build": "parcel build src/pug/index.pug -d public"
   },
   "dependencies": {
     "autoprefixer": "^8.1.0",
     "parcel-plugin-pug": "0.1.2",
+    "modules": "^0.4.0",
     "postcss-import": "^11.1.0",
     "postcss-modules": "^1.1.0",
     "postcss-nested": "^3.0.0",
